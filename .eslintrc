@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [0],
+    "allowArrowFunctions": true, 
+    "import/no-named-as-default": "off",
+    "import/no-unresolved": "off"
+  }
+}

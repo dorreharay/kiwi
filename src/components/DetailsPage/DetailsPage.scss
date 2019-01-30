@@ -1,0 +1,33 @@
+a{
+  width: auto;
+  color: black;
+}
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5%;
+}
+table {
+  border-radius: 0.1vw;
+  background: white;
+  font-family: Comfortaa-Regular;
+}
+.profile_container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.profile_photo{
+  width: 300px;
+  height: 300px;
+  margin-bottom: 30px;
+}

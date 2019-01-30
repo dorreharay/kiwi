@@ -1,0 +1,22 @@
+.list-container{
+  display: flex;
+}
+.card > div{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  & > span:nth-child(1){
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  & > span:nth-child(2){
+    font-size: 20px;
+  }
+}
+
+.card{
+  width: 400px;
+  padding: 20px;
+  margin-bottom: 50px;
+  border: 2px solid black;
+}

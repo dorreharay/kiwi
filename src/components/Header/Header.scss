@@ -1,0 +1,65 @@
+$hh: 55px;
+
+@mixin tab-shared {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $hh;
+  padding: 20px 30px 20px 30px;
+  color: white;
+  transition: 0.2s ease;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: 0.2s ease;
+  text-decoration: none;
+  font-family: PT Mono;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $hh;
+  background: #141414;
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: $hh;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+}
+.ulNav{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+.tab{
+  @include tab-shared;
+}
+.tabHovered{
+  @include tab-shared;
+  border-bottom: 3px solid #e74a4a;
+}
+.exit{
+  height: 6vh;
+  border: 0;
+  color: white;
+  background: none;
+  font-size: 1em;
+  font-family: PT Mono;
+  cursor: pointer;
+  & > a {
+    color: white;
+    text-decoration: white;
+  }
+}
