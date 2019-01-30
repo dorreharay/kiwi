@@ -45,8 +45,8 @@ class Header extends Component {
             </Link>
             {signed ? (
               <Link
-                to="/search"
-                className={currentLocation === '/search' ? styles.tabHovered : styles.tab}
+                to="/search/"
+                className={currentLocation === '/search/' ? styles.tabHovered : styles.tab}
               >
                 Find users
               </Link>

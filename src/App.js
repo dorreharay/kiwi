@@ -16,7 +16,8 @@ function App() {
           <Header currentLocation={location.pathname} />
           <Switch location={location}>
             <Route exact path="/" component={Home} />
-            <Route exact path="/search" component={SearchPage} />
+            <Route exact path="/search/" component={SearchPage} />
+            <Route exact path="/search/:q" component={SearchPage} />
             <Route exact path="/search/details/:username" component={DetailsPage} />
             <Route render={() => (
               <div style={{ marginLeft: '47%', marginTop: '20%' }}>Not Found</div>
