@@ -21,8 +21,8 @@ class SearchPage extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { search } = this.state;
-    const { match } = this.props;
-    if (prevState.search !== search && match.params.q !== undefined) {
+
+    if (prevState.search !== search) {
       this.fetchUsers(search);
     }
   }
@@ -49,7 +49,7 @@ class SearchPage extends Component {
   handleChange = (e) => {
     const { history } = this.props;
     this.setState({ search: e.target.value });
-    history.push(`/search/${e.target.value}`, { state: e.target.value })
+    history.push(`/search/${e.target.value}`, { state: e.target.value });
   };
 
   toggleView = () => {
@@ -69,7 +69,6 @@ class SearchPage extends Component {
   render() {
     const { list, tableView } = this.state;
     const { match } = this.props;
-    
     return (
       <div className={styles.main}>
         <div className={styles.title}>
@@ -79,8 +78,8 @@ class SearchPage extends Component {
             <span className={styles.slider} />
           </label>
         </div>
-        <input type="text" onChange={this.debounceEvent(this.handleChange, 500)} placeholder="find github profiles" defaultValue={match.params.q}/>
-        {list.length !== 0 ? (
+        <input type="text" onChange={this.debounceEvent(this.handleChange, 500)} placeholder="find github profiles" defaultValue={match.params.q} />
+        {list.length !== 0 || match.params.q !== undefined ? (
           <div className={styles.container}>
             {tableView ? <Table list={list} /> : <List list={list} />}
           </div>

@@ -5,20 +5,6 @@ import firebase from '../../firebase';
 import styles from './Header.scss';
 
 class Header extends Component {
-  state = {
-    signed: undefined,
-  }
-
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ signed: true });
-      } else {
-        this.setState({ signed: false });
-      }
-    });
-  }
-
   signInWithGithub = async () => {
     const provider = new firebase.auth.GithubAuthProvider();
     provider.addScope('repo');
@@ -30,7 +16,7 @@ class Header extends Component {
   }
 
   render() {
-    const { signed } = this.state;
+    const { signed } = this.props;
     const { currentLocation } = this.props;
 
     return (
@@ -45,8 +31,8 @@ class Header extends Component {
             </Link>
             {signed ? (
               <Link
-                to="/search/"
-                className={currentLocation === '/search/' ? styles.tabHovered : styles.tab}
+                to="/search"
+                className={currentLocation.includes('/search') ? styles.tabHovered : styles.tab}
               >
                 Find users
               </Link>
